@@ -17,6 +17,10 @@ export default class ErrorHandler {
     static conflict = (message:string) => {
         return new ErrorHandler(409, message)
     }
+
+    static unauthorized = (message:string) => {
+        return new ErrorHandler(401, message)
+    }
 }
 
 

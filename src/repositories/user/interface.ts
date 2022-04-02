@@ -1,3 +1,5 @@
+import ErrorHandler from "../../utils/error"
+
 interface UserInterface {
     name:string,
     email:string,
@@ -8,7 +10,9 @@ interface UserInterface {
 }
 
 interface UserRepo {
+
     createUser: (user:UserInterface) => Promise<UserInterface>
+    findUser : (email:string) => Promise<UserInterface> 
 }
 
 export { UserInterface, UserRepo }

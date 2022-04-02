@@ -1,9 +1,10 @@
+import { resolve } from "path";
 import { getRepository, Repository } from "typeorm";
 import { User } from "../../entities/User";
 import { UserInterface, UserRepo } from "./interface";
 
 
-export default class UserRepositry implements UserRepo {
+export default class UserRepository implements UserRepo {
     
     private ormRepo: Repository<User>
 
@@ -18,4 +19,17 @@ export default class UserRepositry implements UserRepo {
         
         return userSerialized
     }
+
+    findUser = async (email:string) => {
+        const user = await this.ormRepo.findOne( 
+        { 
+            where: {
+                email
+            }
+        })
+
+        return user
+    }
+
+    
 }

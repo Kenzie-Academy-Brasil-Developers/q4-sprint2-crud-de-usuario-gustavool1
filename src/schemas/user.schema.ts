@@ -7,4 +7,9 @@ const userSchema = yup.object().shape({
     isAdm: yup.boolean().required()
 })
 
+export const loginSchema = yup.object().shape({
+    email:yup.string().email().required(),
+    password:yup.string().required()
+})
+
 export default userSchema

@@ -1,4 +1,4 @@
-import ErrorHandler from "../../utils/error"
+import { DeleteResult } from "typeorm"
 
 interface UserInterface {
     name:string,
@@ -9,10 +9,17 @@ interface UserInterface {
     updatedOn?:Date
 }
 
+interface findInterface {
+    email?:string,
+    uuid?:string
+}
 interface UserRepo {
 
     createUser: (user:UserInterface) => Promise<UserInterface>
-    findUser : (email:string) => Promise<UserInterface> 
+    findUser : (user:findInterface) => Promise<UserInterface> 
+    retrieveUsers: () => Promise<UserInterface[]>
+    updatingUser: (user:UserInterface) => Promise<UserInterface>
+    deleteUser: (uuid:string) => Promise<DeleteResult>
 }
 
 export { UserInterface, UserRepo }

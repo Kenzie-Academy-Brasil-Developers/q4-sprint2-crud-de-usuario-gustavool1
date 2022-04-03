@@ -22,6 +22,9 @@ export class User {
     password: string;
 
 
+    @Column({ default:false })
+    isAdm:boolean
+
     @CreateDateColumn({
         nullable:false
     })

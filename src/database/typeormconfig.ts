@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import path from "path";
 import { ConnectionOptions } from "typeorm";
 
-console.log(process.env.POSTGRES_PASSWORD);
 
 dotenv.config();
 

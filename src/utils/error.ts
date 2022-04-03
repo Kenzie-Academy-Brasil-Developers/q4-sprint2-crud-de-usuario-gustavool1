@@ -21,6 +21,10 @@ export default class ErrorHandler {
     static unauthorized = (message:string) => {
         return new ErrorHandler(401, message)
     }
+
+    static notFound = (message:string) => {
+        return new ErrorHandler(404, message)
+    }
 }
 
 

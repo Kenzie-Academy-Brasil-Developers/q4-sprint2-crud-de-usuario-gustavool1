@@ -12,4 +12,12 @@ export const loginSchema = yup.object().shape({
     password:yup.string().required()
 })
 
+
+export const updateUserSchema = yup.object().shape({
+    name:yup.string(),
+    email:yup.string().email(),
+    password:yup.string(),
+})
+
+
 export default userSchema
